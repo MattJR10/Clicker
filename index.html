@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Clicker Game</title>
+   </head>
+   <body>
+      <h1>Clicker</h1>
+<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+ 
+<div id="click">
+  <h2 id="counter">unloaded place holder</h2>
+  <br>
+  <button id="clicker" onclick="cadd()">Click Here!</button>
+  </br>
+ <br>
+<br>
+<br>
+</div>  
+<br>
+<div id="stores">
+  <h2>Store</h2>
+  <button onclick="store0()" id="store0" class="stores">placehold</button>
+  <button onclick="store1()" id="store1" class="stores">placehold</button>
+  <br>
+  <button onclick="store2()" id="store2" class="stores">placehold</button>
+  <button onclick="store3()" id="store3" class="stores">cool placeholder</button>
+  <br>
+  </br>
+<br>
+</div>  
+	<style>
+	body{
+  background-color: white;
+  background-imag: linear-gradient(to left, #1BCF7A, 		#1CBFD2);
+  text-align: center;
+  font-family: 'Nunito';
+}
+#click{
+  width: 47%;
+  height: 75%;
+  background-color: #74A9BB;
+  border-color: black;
+  border-style: solid;
+  border-radius: 3.5%;
+  float: left;
+}
+#clicker{
+  width: 25%;
+aspect-ratio: 1 / 1;
+  background-color: #20CFFF;
+  border-color: black;
+  border-style: solid;
+  border-radius: 35%
+}
+#stores{
+  width: 47%;
+  height: 75%;
+  background-color: #20CFFF;
+  border-color: black;
+  border-style: solid;
+  border-radius: 3.5%;
+ float: right
+}
+.stores{
+  width: 49%;
+  background-color: #74A2cc;
+  aspect-ratio: 1 / 0.25;
+}
+ 
+	</style>
+<script>
+let c2 = 0;
+let c = 0;
+let as = 2500;
+function updatec(){
+  document.getElementById("counter").innerHTML = "Amount: $" + c;
+  document.getElementById("store0").innerHTML = "(+1) Cost: $" + s0;
+  document.getElementById("store1").innerHTML = "(+3) Cost: $" + s1;
+    document.getElementById("store2").innerHTML = "(*1) Cost: $" + s2;
+    document.getElementById("store3").innerHTML = "(*1.5 Speed) Cost: $" + s3;
+}
+let c1 = 1
+function cadd(){
+  c = c + c1;
+  updatec()
+}
+let s0 = 5
+let s1 = 8
+let s2 = 10
+let s3 = 45
+function store0(){
+  if (c >= s0){
+    c1 = c1 + 1
+    c = c - s0
+    s0 = s0 + (c1 * 2.5)
+    updatec()
+}
+}
+function store1(){
+  if (c >= s1){
+    c1 = c1 + 3
+    c = c - s1
+    s1 = s1 + (c1 * 2.5)
+    updatec()
+}
+}
+function store2(){
+  if (c >= s2){
+    c2 = c2 + 1
+    c = c - s2
+    s2 = s2 + (c2 * 2.5)
+    updatec()
+}
+}
+function store3(){
+  if (c >= s3){
+    as = as - 500
+    c = c - s3
+    s3 = s3 + (s3 * 2.5)
+    updatec()
+}
+}
+ 
+let i = 0;
+setInterval(() => {
+  c = c + c2
+  updatec()
+}, as);
+ 
+ 
+ 
+</script>  
+   </body>
+</html>
+
